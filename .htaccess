@@ -1,0 +1,36 @@
+# =================================================================
+# 1. SEGURIDAD BÁSICA Y LISTADO DE DIRECTORIOS
+# =================================================================
+
+# Deshabilitar la visualización de la estructura de directorios
+# Evita que alguien vea la lista de tus archivos al acceder a una carpeta sin index.
+Options -Indexes
+
+# =================================================================
+# 2. BLOQUEO DE CARPETAS SENSIBLES
+# =================================================================
+
+# Bloqueo total para la carpeta de la base de datos (si contuviera archivos sensibles)
+RewriteRule ^db/.* - [F,L]
+
+# Bloqueo para la carpeta que contiene los scripts PHP
+# Nota: Esto NO afecta a los archivos en /views/ (como dashboard.php) porque están fuera de la carpeta /php/.
+# Bloquea el acceso directo a cualquier archivo PHP en /php/
+RewriteRule ^php/.*(\.php|\.inc)$ - [F,L]
+
+# Opcional: Bloquear acceso a archivos de configuración comunes
+<FilesMatch "(config\.inc\.php|conexion\.php|\.htaccess)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+
+# =================================================================
+# 3. CONFIGURACIÓN DE REESCRITURA PARA VISTAS (OPCIONAL)
+# =================================================================
+
+# Opcional: Si decides usar URLs limpias en el futuro (ej: /inventario/producto/5)
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php [L]
