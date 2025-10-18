@@ -1,5 +1,5 @@
 <?php
-// inventario/php/api_obtener_productos.php
+
 require_once 'conexion.php'; 
 header('Content-Type: application/json; charset=utf-8');
 
