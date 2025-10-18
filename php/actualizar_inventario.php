@@ -1,5 +1,4 @@
 <?php
-// inventario/php/actualizar_inventario.php
 
 session_start();
 require_once 'conexion.php'; 
