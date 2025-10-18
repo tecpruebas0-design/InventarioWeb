@@ -1,5 +1,4 @@
 <?php
-// inventario/php/eliminar_producto.php
 
 session_start();
 require_once 'conexion.php'; 
