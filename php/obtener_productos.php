@@ -1,6 +1,4 @@
 <?php
-// inventario/php/obtener_productos.php (Unificado para Lista, Búsqueda y Detalle)
-
 session_start();
 require_once 'conexion.php'; 
 

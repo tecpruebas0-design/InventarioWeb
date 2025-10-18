@@ -1,6 +1,4 @@
 <?php
-// inventario/php/conexion.php
-
 // configuracion
 $servername = "localhost";
 $username = "root"; 

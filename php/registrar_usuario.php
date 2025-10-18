@@ -1,6 +1,4 @@
 <?php
-// inventario/php/registrar_usuario.php
-
 // Incluir la conexión a la base de datos
 require_once 'conexion.php'; 
 

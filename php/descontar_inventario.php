@@ -1,6 +1,4 @@
 <?php
-// inventario/php/descontar_inventario.php - Descuenta una unidad del inventario por código de barra
-
 session_start();
 require_once 'conexion.php'; 
 

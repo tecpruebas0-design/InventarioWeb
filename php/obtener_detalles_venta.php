@@ -1,5 +1,5 @@
 <?php
-// inventario/php/obtener_detalles_venta.php
+
 
 session_start();
 ini_set('display_errors', 1);

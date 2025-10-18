@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $message = 'No se realizó ningún cambio o el producto no existe.';
                 }
             } else {
-                // Error 1062 por duplicidad
+                // Error por codigo duplicado
                 if ($conn->errno === 1062) {
                      $message = 'Error: El código de barra o nombre de producto ya existe.';
                 } else {

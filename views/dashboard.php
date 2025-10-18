@@ -94,7 +94,7 @@ try {
 </head>
 <body>
     
-    <?php include 'navbar.php'; // Incluimos la barra de navegación ?>
+    <?php include 'navbar.php'; // Barra de navegación ?>
 
     <main class="container mt-4">
 

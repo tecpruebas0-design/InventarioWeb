@@ -1,5 +1,4 @@
 <?php
-// inventario/php/api_registrar_producto.php
 
 require_once 'conexion.php';
 header('Content-Type: application/json; charset=utf-8');

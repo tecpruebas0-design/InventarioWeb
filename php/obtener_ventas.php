@@ -1,5 +1,4 @@
 <?php
-// inventario/php/obtener_ventas.php
 
 session_start();
 require_once 'conexion.php';

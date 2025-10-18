@@ -1,5 +1,4 @@
 <?php
-// inventario/php/registrar_producto.php (CONFIRMADO)
 
 session_start();
 require_once 'conexion.php'; 

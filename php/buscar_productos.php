@@ -8,7 +8,7 @@ if (isset($_POST['codigo_barra'])) {
     $sql = "SELECT id_producto, codigo_barra, nombre_producto, descripcion, precio_venta, stock_actual 
             FROM productos 
             WHERE codigo_barra LIKE ? 
-            LIMIT 10"; // permitimos resultados parciales
+            LIMIT 10";
 
     $stmt = $conn->prepare($sql);
     $like = "%$codigo%";

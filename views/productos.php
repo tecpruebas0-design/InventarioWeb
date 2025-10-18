@@ -29,20 +29,20 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
     <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script> 
     
     <style>
-        /* CORRECCIÓN CRUCIAL DE CSS: Aumentar la especificidad */
-        /* Aplicar a la fila y a las celdas para anular estilos de .table-striped y .table-hover */
+        
+        
         .table tbody tr.stock-bajo,
         .table tbody tr.stock-bajo > td {
-            background-color: #f8d7da !important; /* Rojo claro para alerta (¡Asegurado!) */
+            background-color: #f8d7da !important;
             font-weight: bold;
         }
         
-        /* Asegura que el hover no reemplace el color de stock-bajo (opcional, pero recomendado) */
+        
         .table-hover > tbody > tr.stock-bajo:hover > * {
-            background-color: #f6c7cc !important; /* Tono ligeramente más oscuro al pasar el ratón */
+            background-color: #f6c7cc !important;
         }
         
-        /* Estilos del área de escaneo (CRUCIALES PARA MÓVIL) */
+        /* Estilos del área de escaneo (PARA MÓVIL) */
         #interactive_registro.viewport {
             width: 100%;
             height: 250px; 
@@ -208,7 +208,7 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        // --- Variables Globales ---
+        
         let currentPage = 1;
         let currentSearch = '';
         let fetchController = null; 
@@ -243,7 +243,7 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
                     constraints: {
                         width: { min: 640, ideal: 1280, max: 1920 },
                         height: { min: 480, ideal: 720, max: 1080 },
-                        facingMode: "environment" // Usa la cámara trasera en móvil
+                        facingMode: "environment" // Usa la cámara trasera en el tellefono
                     },
                 },
                 locator: {
@@ -272,11 +272,11 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
 
         function stopRegisterScanner(code) {
             if (isScannerModalRunning) {
-                // CORRECCIÓN: Stop debe llamarse solo si Quagga está realmente corriendo
+                
                 try {
                     Quagga.stop();
                 } catch(e) {
-                    // console.warn("Quagga ya estaba detenido o no se pudo detener.", e);
+                    
                 }
                 isScannerModalRunning = false;
             }
@@ -295,10 +295,10 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
                     timer: 1500, 
                     showConfirmButton: false
                 }).then(() => {
-                    // Vuelve a mostrar el modal principal después de cerrar el secundario
+                    
                     const mainModal = document.getElementById('modalAgregarProducto');
                     const mainModalInstance = bootstrap.Modal.getInstance(mainModal) || new bootstrap.Modal(mainModal);
-                    // Asegúrate de que el modal principal se muestre, si no se cerró antes
+                    
                     if (!mainModal.classList.contains('show')) {
                         mainModalInstance.show(); 
                     }
@@ -307,7 +307,7 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
                 });
             } 
             
-            // Restablece el botón y el estado del escáner en el modal
+            
             startScannerModalBtn.style.display = 'block'; 
             startScannerModalBtn.textContent = "Iniciar Escaneo";
             scanStatus.className = 'alert alert-info mt-3 text-center';
@@ -321,12 +321,11 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
             }
         });
 
-        // Eventos de control del modal Escáner
+        
         scannerModal.addEventListener('shown.bs.modal', function () {
-            // Detenemos el inicio automático si el botón está visible (significa que no ha iniciado aún)
+            
             if(startScannerModalBtn.style.display !== 'none') {
-                 // No hacer nada, esperar click en 'Iniciar Escaneo' o llamar a startRegisterScanner() aquí si quieres que sea automático
-                 // Lo dejaremos automático con un pequeño retraso, pero mantenemos el botón por si hay fallos iniciales.
+                 
                 setTimeout(startRegisterScanner, 200); 
             }
         });
@@ -341,13 +340,12 @@ $status = isset($_GET['status']) ? urldecode($_GET['status']) : '';
             startRegisterScanner();
         });
         
-        // --- LÓGICA AJAX: TABLA, PAGINACIÓN Y BÚSQUEDA ---
+        // --- LÓGICA AJAX: TABLA, PAGINACIÓNNN Y BÚSQUEDA --- 
 
         async function fetchProductos(pagina, busqueda) {
             const tableBody = document.getElementById('productos-table-body');
             const paginationControls = document.getElementById('pagination-controls');
             
-            // Colspan se reduce de 7 a 6 al eliminar la columna ID
             tableBody.innerHTML = '<tr><td colspan="6" class="text-center"><div class="spinner-border text-info" role="status"><span class="visually-hidden">Cargando...</span></div></td></tr>';
             paginationControls.innerHTML = '';
 

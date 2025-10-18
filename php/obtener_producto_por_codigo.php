@@ -1,5 +1,5 @@
 <?php
-// inventario/php/obtener_producto_por_codigo.php
+
 session_start();
 require_once 'conexion.php';
 

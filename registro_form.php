@@ -33,14 +33,10 @@ if (isset($_GET['message'])) {
             padding: 15px; /* Pequeño padding para asegurar espacio de respiro */
         }
         .register-card {
-            max-width: 420px; /* Ancho ajustado a index.php */
-            width: 100%; /* Asegura que tome el ancho máximo */
-            
-            /* --- CORRECCIONES CLAVE PARA EL DESBORDE --- */
-            max-height: 100%; /* Asegura que no sea más alta que la ventana */
-            overflow-y: auto; /* Permite scroll si el contenido es demasiado alto */
-            /* ------------------------------------------- */
-            
+            max-width: 420px;
+            width: 100%;
+            max-height: 100%; 
+            overflow-y: auto; 
             padding: 30px; 
             border-radius: 12px; 
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 

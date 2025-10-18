@@ -1,5 +1,5 @@
 <?php
-// inventario/php/logout.php
+
 
 session_start(); // Iniciar la sesión
 

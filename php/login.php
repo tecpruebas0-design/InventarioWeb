@@ -1,5 +1,4 @@
 <?php
-// inventario/php/login.php
 
 session_start(); // Iniciar la sesión para gestión de usuarios
 require_once 'conexion.php'; // Incluir la conexión a la base de datos

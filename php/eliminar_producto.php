@@ -54,7 +54,7 @@ if ($stmt = $conn->prepare($sql)) {
         }
     } else {
         // Error de ejecución SQL
-        http_response_code(500); // Error interno del servidor
+        http_response_code(500); 
         header('Content-Type: application/json');
         echo json_encode(['success' => false, 'message' => 'Error al ejecutar la eliminación: ' . $stmt->error]);
     }
